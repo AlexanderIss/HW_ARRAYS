@@ -11,11 +11,7 @@ public class StatsService {
     }
 
     public int findAverageSales(int[] sales) {
-        int averageSales = 0;
-        for (int i = 0; i < sales.length; i++) {
-            averageSales = averageSales + sales[i];
-        }
-
+        int averageSales = findSumSales(sales);
         return averageSales / sales.length;
     }
 
@@ -44,11 +40,7 @@ public class StatsService {
     }
 
     public int findLessAverageSales(int[] sales) {
-        int averageSales = 0;
-        for (int i = 0; i < sales.length; i++) {
-            averageSales = averageSales + sales[i];
-        }
-        averageSales = averageSales / sales.length;
+        int averageSales = findAverageSales(sales);
         int count = 0;
         for (int i = 0; i < sales.length; i++) {
             if (averageSales > sales[i]) count++;
@@ -57,11 +49,7 @@ public class StatsService {
     }
 
     public int findMoreAverageSales(int[] sales) {
-        int averageSales = 0;
-        for (int i = 0; i < sales.length; i++) {
-            averageSales = averageSales + sales[i];
-        }
-        averageSales = averageSales / sales.length;
+        int averageSales = findAverageSales(sales);
         int count = 0;
         for (int i = 0; i < sales.length; i++) {
             if (averageSales < sales[i]) count++;
